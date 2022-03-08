@@ -1,22 +1,27 @@
 import random
 
-
 def stringgenerate():
-    a1 = "hello"
-    a2 = "world"
-    a3 = "python"
-    a4 = "pune"
-    a5 = "computer"
-    a6 = "internet"
-    a7 = "game"
-    a8 = "github"
-    a9 = "apple"
-    a10 = "banana"
-    a11 = "mango"
-    a = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11]
-    x = random.choice(a)
+    option1 = [
+        "apple", "an _____ a day, keeps the doctor away.", "Apples Are 25% Air."
+    ]
+    option2 = [
+        "mango", "_____ is also known as the king of fruits.", "Mangoes first appeared in India over 5,000 years ago."
+    ]
+    option3 = [
+        "grape", "A ______ come in green and black variants and is seedless.", "Table and Wine Grapes Are Different."
+    ]
+    option4 = [
+        "orange", "______ juice contains Vitamin C, Vitamin A, Calcium.", "There are over 600 varieties of oranges."
+    ]
+    option5 = [
+        "banana", "The _______ may have been the world's first cultivated fruit.", "A banana is a berry not a fruit."
+    ]
+    a = [option1, option2, option3, option4, option5]
+    answer = random.choice(a)
+    x = answer[0]
+    stringgenerate.hint = answer[1]
+    stringgenerate.fact = answer[2]
     game(x)
-
 
 def game(a):
     acopy = a
@@ -26,14 +31,15 @@ def game(a):
     w = " " * len(a)
     print(f"[>] {b}")
     success = 0
+    print(f"Hint: {stringgenerate.hint}")
     while 1:
-        print(f"[>] You have {attempts} attempts left")
+        print(f"\n[>] You have {attempts} attempts left.")
         print(f"[>] Enter a letter without quotes\n")
         ch = input("[>] ")
         x = a.find(ch)
         m = w.find(ch)
         if m != -1:
-            print(f"[>] You guessed it already! its wrong")
+            print(f"\n[>] You guessed it already! its wrong")
             print(f"[>] Previous wrong guesses : ")
             print(f"[>] {w}")
             continue
@@ -56,25 +62,21 @@ def game(a):
             flag = 0
             break
     if flag == 0:
-        print(f"[>] Congrats! word is ")
-        print(f"[>] {acopy}")
+        print(f"[>] Congrats! word is {acopy}")
+        print(f"Fun Fact, {stringgenerate.fact}")
     else:
-        print(f"[>] Better luck next time")
+        print(f"[>] Better luck next time.")
     playagain()
-
 
 def main():
     stringgenerate()
 
-
 def playagain():
     ch = input(
-        f"[>] If you want to play again,\n[>] Press (Y/N)\n[>] ").lower()
-    #ch=input("")
+        f"\n[>] If you want to play again,\n[>] Press (Y/N)\n[>] ").lower()
     if ch == 'y':
         main()
     else:
         print(f"[>] Thanks for playing the game!\n")
-
 
 main()
