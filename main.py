@@ -74,7 +74,7 @@ def main():
 def playagain():
     ch = input(
         f"\n[>] If you want to play again,\n[>] Press (Y/N)\n[>] ").lower()
-    if ch == 'y':
+    if ch == 'y' or ch == 'yes':
         main()
     else:
         print(f"[>] Thanks for playing the game!\n")
