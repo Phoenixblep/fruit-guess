@@ -4,15 +4,15 @@ import random
 def stringgenerate():
     a1 = "hello"
     a2 = "world"
-    a3 = "well"
-    a4 = "cool"
-    a5 = "ok"
-    a6 = "bruh"
-    a7 = "lessgo"
+    a3 = "python"
+    a4 = "pune"
+    a5 = "computer"
+    a6 = "internet"
+    a7 = "game"
     a8 = "github"
-    a9 = "hehe"
-    a10 = "dababy"
-    a11 = "lav"
+    a9 = "apple"
+    a10 = "banana"
+    a11 = "mango"
     a = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11]
     x = random.choice(a)
     game(x)
